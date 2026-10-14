@@ -1,0 +1,4 @@
+# Preserve the reviewed files byte-for-byte on every checkout.
+* -text
+*.pdf binary
+*.zip binary
