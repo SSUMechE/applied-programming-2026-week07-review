@@ -1,22 +1,25 @@
 # Week 7: Review
 
-Review the concepts and coding skills from Weeks 1–6. The five demonstration
-scripts are complete. Sections 9.1–9.2 provide two short, optional exercises
-for writing a class, connecting objects and checking results with assertions.
-This is not a new graded Assignment or the examination starter.
+Review the concepts and coding skills already taught in **Weeks 1–6**.
+Reading V20 uses the original teaching examples, values and terminology.
+The supplied files collect the original Week 2–5 examples for execution.
+Week 6 is reviewed through its original diagrams, tables and interfaces in
+the Reading, without a new completed Assignment solution.
 
-- [Reading V16 (PDF)](docs/week_07_review_reading_v16.pdf)
+This is **not a new graded Assignment or the examination starter**.
+
+- [Reading V20 (PDF)](docs/week_07_review_reading_v20.pdf)
 - [Download the examples ZIP](https://github.com/SSUMechE/applied-programming-2026-week07-review/raw/refs/heads/main/downloads/week07_review_examples.zip)
-- [Example files and practice instructions](week07_review/README.md)
+- [Example files and execution commands](week07_review/README.md)
 
 ## 1. Get the files
 
-Choose **one** method. Do not put these files inside an earlier assignment repository.
+Choose **one** method. Keep these files outside earlier Assignment repositories.
 
-**ZIP:** download the examples ZIP above and extract it. It contains the
+**ZIP:** download the examples ZIP and extract it. It contains the
 `week07_review` folder used in the Reading.
 
-**Git:** open **Anaconda Prompt** and run the following from your course folder.
+**Git:** open **Anaconda Prompt** and run these commands from your course folder.
 Replace `C:\your-course-folder` with your own folder.
 
 ```bat
@@ -26,14 +29,17 @@ cd applied-programming-2026-week07-review
 cd week07_review
 ```
 
-The source repository is public. Downloading or cloning it does not require
-an invitation or a personal access token. A new private repository is not
-required for this review.
+This source repository is public. Cloning or downloading does not require an
+invitation or personal access token. No new private repository is required.
+
+If you have the earlier review files, extract the new ZIP into a separate folder
+to keep any work you have already saved. The current examples are organized
+under `week02`, `week03`, `week04` and `week05`.
 
 ## 2. Use the existing environment
 
-Keep the Week 6 environment. No additional package, GPU or simulator is needed.
-From the `week07_review` folder:
+Keep the Week 6 environment. No extra installation, GPU or simulator is needed.
+From `week07_review`:
 
 ```bat
 conda activate applied-programming-w06
@@ -41,70 +47,42 @@ python -c "import sys, numpy, pytest; print(sys.executable); print(numpy.__versi
 dir
 ```
 
-The interpreter path should point to `applied-programming-w06`. The Week 6
-environment uses Python 3.12.13, NumPy 2.4.6 and pytest 9.1.1. The directory
-listing should contain `functions_review.py` and the other review files.
-If the Week 6 environment has not been installed, use the existing
+The interpreter path should point to `applied-programming-w06`. The existing
+Week 6 environment uses Python 3.12.13, NumPy 2.4.6 and pytest 9.1.1.
+The listing should show the four week folders above.
+If the environment is missing, follow the existing
 [Week 6 setup instructions](https://github.com/SSUMechE/applied-programming-2026-week06-starter#2-prepare-repository-and-environment).
-Do not overwrite a working environment merely to run these examples.
+Do not replace a working environment to run this review.
 
-On macOS or Linux, use your terminal, `cd "/your/course/folder"` instead of
+On macOS/Linux, use your terminal, `cd "/your/course/folder"` instead of
 `cd /d`, and `ls` instead of `dir`. The Conda and Python commands are the same.
-Enter these commands in the terminal, not after Python's `>>>` prompt.
+Enter commands in the terminal, not after Python's `>>>` prompt.
 
-## 3. Run the supplied examples
+## 3. Run in Reading order
 
-Stay in `week07_review` and follow the Reading order:
+The [example README](week07_review/README.md) lists the directory changes and
+commands in order. It explains which files are complete demonstrations.
 
-```bat
-python functions_review.py
-python arrays_review.py
-python objects_review.py
-python collections_review.py
-python models_review.py
-python -m pytest -q
-```
+- **Section 2:** original functions and tests in `week02`. Expected: `3 passed`.
+- **Section 3:** original NumPy, view/copy, interpolation and batch examples in `week02`.
+- **Section 4:** original classes, dataclass and history in `week03`. Expected: `4 passed`.
+- **Sections 5–6:** original collections and JSON examples in `week04`.
+- **Section 7:** supplied Week 5 `method` and `limits` comparisons in `week05`.
+- **Section 8:** original Week 6 grid, greedy and selection examples in the Reading.
+- **Section 9:** optional reconstruction of the already taught Week 3 examples.
 
-The unchanged supplied examples give **27 passed**. Each complete script
-prints several sections. Each Output box in the Reading corresponds to the
-adjacent code, not necessarily the entire script's output.
+`week02/example_wrong_distance.py` is the original deliberately incorrect
+example. Its test is expected to fail. It is not part of the three passing
+function tests.
 
-`collections_review.py` also writes `outputs/obstacle.json` and reads it back.
-It is a generated demonstration file, not an extra submission item.
+`week04/json_practice.py` writes and reads
+`week04/practice/obstacle_practice.json`. This is a generated example file, not
+an extra submission item.
 
-## 4. Optional object-oriented practice
+The supplied Week 5 comparisons do not call the unfinished Assignment TODOs
+in `ap_week05/model.py`. Leave those package files unchanged for this review.
+The Reading's Week 3 `as_array()` excerpt keeps its original Assignment context.
+It is not a method added to the simple review dataclass.
 
-Use Reading Sections **9.1–9.2** for the exact instructions and two cases per
-exercise. Only the five marked regions need writing:
-
-- `practice/calibration.py`: E1_CLASS, E1_APPLY, E2_INIT and E2_VALUES.
-- `practice/check_my_measurements.py`: E2_ASSERT.
-
-Keep the supplied returns and surrounding code. Do not edit
-`practice/check_calibration.py`.
-
-After completing Exercise 1:
-
-```bat
-cd practice
-python calibration.py 1
-python -m pytest check_calibration.py -q -k calibration_case
-```
-
-Expected test summary: **2 passed, 4 deselected**.
-
-After completing Exercise 2, stay in `practice`:
-
-```bat
-python calibration.py 2
-python -m pytest check_calibration.py check_my_measurements.py -q
-```
-
-Expected test summary: **7 passed**. Before editing, these seven checks fail
-with `NotImplementedError` because the practice regions are unfinished.
-They are separate from the 27 complete demonstration checks.
-Use `cd ..` to return to `week07_review`.
-
-There is no new report, screenshot collection, package build or mandatory
-submission for these review exercises. Earlier assignments and their
-submission requirements are unchanged.
+No new report, screenshot collection, wheel, private repository or mandatory
+LMS submission is required. Earlier Assignment requirements are unchanged.

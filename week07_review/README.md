@@ -1,94 +1,85 @@
-# Week 7 review examples and short OOP practice
+# Week 7 review files
 
-These files accompany the Week 7 Reading. The five demonstration scripts and
-test_review.py are complete. The separate practice/ folder contains two optional
-writing exercises from Sections 9.1–9.2, not a graded Assignment or examination
-starter. No previous student TODO is imported. No new installation is required.
+These files reuse the original Week 2–5 teaching examples. This is not a new
+Assignment. No new package installation, private repository or LMS submission
+is required for these review runs.
 
-Extract these files together to a separate `week07_review` folder. Keep them out
-of earlier assignment repositories. In Anaconda Prompt, activate the existing
-Week 6 environment, then enter the extracted folder:
+Use Anaconda Prompt and the existing `applied-programming-w06` environment.
+Extract the ZIP outside your Assignment repositories. Start in `week07_review`.
 
 ```text
 conda activate applied-programming-w06
-cd /d "C:\your-course-folder\week07_review"
 ```
 
-Replace the example directory with your actual extracted directory. Run these
-commands in that folder, not at Python's `>>>` prompt:
+## Functions and NumPy — Week 2
+
+`learning_geometry.py` contains the original complete function definitions.
+The small execution files collect the original Reading's code blocks without
+changing their calculations or values. Running the definition file alone does
+not print a demonstration.
 
 ```text
-python functions_review.py
-python arrays_review.py
-python objects_review.py
-python collections_review.py
-python models_review.py
-python -m pytest -q test_review.py
+cd week02
+python values_and_calls.py
+python function_calls.py
+python tolerance_examples.py
+python array_examples.py
+python -m pytest -q test_learning_geometry.py
+cd ..
 ```
 
-- `functions_review.py`: arguments, returned values, validation and containers.
-- `arrays_review.py`: shape, axis, translation, view/copy and batch.
-- `objects_review.py`: initialization, property, state changes, dataclass,
-  composition and exception inheritance.
-- `collections_review.py`: list, dictionary, set, deque and a JSON round trip.
-- `models_review.py`: sampled clearance, threshold margins and Cartesian grids.
-- `test_review.py`: supplied checks that can be read and run as provided.
+The original three tests should pass. `example_wrong_distance.py` is the
+original deliberately incorrect example, not a broken supplied solution.
 
-The files print their observations. Only `collections_review.py` also writes
-`outputs/obstacle.json`, relative to the current folder. It reads the same file
-back and explicitly constructs a `ReviewObstacle` from the resulting dictionary.
-Rerunning the file replaces this small demonstration output. The output is not
-a new submission item.
+## Objects and history — Week 3
 
-The snippets marked in comments are exact parts used in the Reading. Run the
-complete files so their imports and earlier definitions are available. Importing
-a module does not run its `main()` demonstration.
-Each complete demonstration prints several sections in order. Each Reading
-Output box shows the part produced by the adjacent code, not the entire run.
-
-The small objects have deliberately narrow teaching contracts. `ReviewObstacle`
-is a separate teaching type, not the frozen Week 4 `Obstacle` public API. Its names
-and centres are supplied valid values. The radius must be a finite positive
-Python integer or float, excluding Boolean. `Point` illustrates a nonempty owned
-tuple of supplied numeric coordinates, not all of the Week 3 validation rules.
-Coordinates and radii in the object/model examples are in metres. The separate
-inspection-point arrays in `arrays_review.py` are in millimetres.
-
-Sampled clearance is a geometric observation at selected points, not a continuous
-collision check or a safety guarantee. This review does not run a robot or a
-physics simulator. It adds no required report or test-writing quota and does
-not alter earlier assignment or submission instructions.
-
-## Two optional writing exercises
-
-Use Reading Sections 9.1–9.2 for the exact tasks. Work in the practice folder:
+The ordinary `Configuration` class and frozen dataclass are in separate files,
+as in the original practice. The ordinary example calls `dimension()`. The
+dataclass example reads the `dimension` property without parentheses.
 
 ```text
-cd practice
+cd week03
+python 01_instances.py
+python 02_dataclass_property.py
+python array_aliasing.py
+python practice_history.py
+python -m pytest -q test_practice_history.py
+cd ..
 ```
 
-1. In calibration.py, complete E1_CLASS and E1_APPLY. Keep the supplied return.
+The original four history tests should pass. The Reading's `as_array()` excerpt
+retains its original Week 3 Assignment context. It is not added to the simple
+class in `02_dataclass_property.py`.
+
+## Collections and JSON — Week 4
+
+Keep `ap_week04_scene_data` beside these files. The supplied original domain
+classes support the original practice calls.
 
 ```text
-python calibration.py 1
-python -m pytest check_calibration.py -q -k calibration_case
+cd week04
+python collections_practice.py
+python json_practice.py
+cd ..
 ```
 
-After Exercise 1: 2 passed, 4 deselected. MeasurementSet may still be unfinished.
+## Sampling and acceptance — Week 5
 
-2. In calibration.py, complete E2_INIT and E2_VALUES. In
-   check_my_measurements.py, write the E2_ASSERT checks specified in the Reading.
+Keep `ap_week05` beside the original example file. These two commands use the
+provided calculations and do not require completing the Assignment TODOs in
+the package. Do not edit those files for this review.
 
 ```text
-python calibration.py 2
-python -m pytest check_calibration.py check_my_measurements.py -q
+cd week05
+python compare_evaluations.py method
+python compare_evaluations.py limits
+cd ..
 ```
 
-After both exercises: 7 passed. The unchanged practice starter has 7 expected
-NotImplementedError failures. These checks are separate from the 27 complete
-demonstration tests. The explicit check_ filenames keep unfinished practice out
-of the demonstration test command. Do not edit check_calibration.py.
+Week 6's grid, greedy and selection examples are reviewed in the Reading using
+the original diagrams, tables and supplied interfaces. The ZIP does not add a
+new completed implementation of the Week 6 Assignment functions.
 
-Use cd .. to return to week07_review. No new report, repository or submission
-is required. Raw readings use sensor units. Gain is mm per sensor unit, while
-offset_mm and corrected values use mm. No fitting or device access is involved.
+On macOS/Linux, directory changes and these Python commands are the same.
+Use `ls` instead of `dir` to list files. The initial full-path directory change
+uses `cd "/your/folder/week07_review"`, not Windows `cd /d`.

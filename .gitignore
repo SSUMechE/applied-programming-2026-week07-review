@@ -2,5 +2,6 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 outputs/
+week07_review/week04/practice/obstacle_practice.json
 .DS_Store
 Thumbs.db
